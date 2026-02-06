@@ -1,0 +1,87 @@
+import { getFavorites, toggleFavorite } from '../utils/favoritesStorage';
+import { getExerciseById } from '../api/exercisesApi';
+import { capitalizeFirstLetter } from '../utils/capitalizeFirstLetter';
+
+const listEl = document.querySelector('.favorites-list');
+const emptyMessageEl = document.querySelector('.favorites-empty-message');
+
+export async function initFavorites() {
+  if (!listEl) return;
+
+  const favoriteIds = getFavorites();
+
+  if (favoriteIds.length === 0) {
+    listEl.innerHTML = '';
+    showEmptyState(true);
+    return;
+  }
+
+  showEmptyState(false);
+
+  try {
+    const promises = favoriteIds.map(id => getExerciseById(id));
+    const exercises = await Promise.all(promises);
+    renderFavoritesList(exercises);
+  } catch (error) {
+    console.error('Error fetching favorites:', error);
+  }
+}
+
+function showEmptyState(shouldShow) {
+  if (emptyMessageEl) {
+    emptyMessageEl.style.display = shouldShow ? 'block' : 'none';
+  }
+}
+
+function renderFavoritesList(exercises) {
+  const html = exercises.map(item => `
+    <li class="exercise-card favorite-card" data-id="${item._id}">
+      <div class="exercise-card__header">
+        <div class="exercise-card__meta">
+          <span class="exercise-card__badge">WORKOUT</span>
+          <button class="favorite-btn--trash" data-id="${item._id}" aria-label="Remove">
+            <svg width="16" height="16" viewBox="0 0 20 20">
+              <use href="./img/icons/trash-01.svg#icon"></use> 
+            </svg>
+          </button>
+        </div>
+
+        <button class="exercise-card__start start-btn" data-id="${item._id}">
+            Start <span>→</span>
+        </button>
+      </div>
+
+      <div class="exercise-card__title-row">
+        <div class="exercise-card__title">
+           ${capitalizeFirstLetter(item.name)}
+        </div>
+      </div>
+
+      <p class="exercise-card__info">
+        <span class="info-item">Burned calories: <span class="info-value">${item.burnedCalories} / ${item.time} min</span></span>
+        <span class="info-item">Body part: <span class="info-value">${capitalizeFirstLetter(item.bodyPart)}</span></span>
+        <span class="info-item">Target: <span class="info-value">${capitalizeFirstLetter(item.target)}</span></span>
+      </p>
+    </li>
+  `).join('');
+
+  listEl.innerHTML = html;
+
+  document.querySelectorAll('.favorite-btn--trash').forEach(btn => {
+    btn.addEventListener('click', handleRemoveFavorite);
+  });
+}
+
+async function handleRemoveFavorite(event) {
+  const btn = event.target.closest('.favorite-btn--trash');
+  if (!btn) return;
+
+  const id = btn.dataset.id;
+  toggleFavorite(id);
+
+  await initFavorites();
+}
+
+if (document.querySelector('.favorites-list')) {
+  initFavorites();
+}
