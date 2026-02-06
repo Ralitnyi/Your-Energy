@@ -1,19 +1,57 @@
 <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
+  <div class="container header__container">
+    <a href="./index.html" class="header__logo" aria-label="Logo">
+      <img src="./img/logo.png" alt="Your Energy" width="132" height="24" />
+    </a>
+
+    <nav class="header__nav header__nav--desktop">
+      <ul class="header__nav-list">
+        <li>
+          <a href="./index.html" class="header__nav-link">
+            Home
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
+        <li>
+          <a href="./favorites.html" class="header__nav-link">
+            Favorites
+          </a>
         </li>
       </ul>
     </nav>
+
+    <div class="header__socials-desktop">
+      <ul class="socials">
+        <li class="socials__item">
+          <a href="https://www.facebook.com/goITclub/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+            class="socials__link">
+            <svg class="socials__icon" width="28" height="28">
+              <use href="./img/icons/facebook.svg#icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="https://www.instagram.com/goitclub/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+            class="socials__link">
+            <svg class="socials__icon" width="28" height="28">
+              <use href="./img/icons/instagram.svg#icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="https://www.youtube.com/c/GoIT" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+            class="socials__link">
+            <svg class="socials__icon" width="28" height="28">
+              <use href="./img/icons/youtube.svg#icon"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="header__burger js-open-menu" aria-label="Open menu">
+      <svg width="32" height="32">
+        <use href="./img/icons/menu.svg#icon"></use>
+      </svg>
+    </button>
   </div>
 </header>

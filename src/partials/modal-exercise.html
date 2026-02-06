@@ -1,0 +1,95 @@
+<div class="modal is-hidden">
+  <div class="modal__backdrop"></div>
+
+  <div class="modal__content">
+    <button class="modal__close">×</button>
+
+    <div class="modal__body">
+      <div class="modal__image">
+        <img class="modal-gif" alt="" />
+      </div>
+
+      <div class="modal__info">
+        <h2 class="modal-title"></h2>
+
+        <div class="modal__rating">
+          <span class="modal-rating"></span>
+        </div>
+
+        <div class="modal__divider"></div>
+
+
+        <ul class="modal__meta">
+          <li>
+            <span>Target</span>
+            <strong class="modal-target"></strong>
+          </li>
+          <li>
+            <span>Body part</span>
+            <strong class="modal-bodypart"></strong>
+          </li>
+          <li>
+            <span>Equipment</span>
+            <strong class="modal-equipment"></strong>
+          </li>
+          <li>
+            <span>Popular</span>
+            <strong class="modal-popularity"></strong>
+          </li>
+        </ul>
+
+        <div class="modal__calories">
+          <span>Burned calories</span>
+          <div class="modal__meta-value">
+            <strong class="modal-calories"></strong>
+            <span>/</span>
+            <strong class="modal-time"></strong>
+          </div>
+        </div>
+
+        <div class="modal__divider"></div>
+
+        <p class="modal-description"></p>
+      </div>
+
+      <div class="modal__actions">
+        <button class="btn-primary js-favorite-btn" type="button">
+          Add to favorites ♡
+        </button>
+
+        <button class="btn-outline" type="button">
+          Give a rating
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="rating-modal is-hidden">
+  <div class="rating-modal__backdrop"></div>
+
+  <div class="rating-modal__content">
+    <button class="rating-modal__close">×</button>
+
+    <p class="rating-modal__label">Rating</p>
+
+    <div class="rating-modal__stars" data-value="0">
+      <button type="button" data-star="1">★</button>
+      <button type="button" data-star="2">★</button>
+      <button type="button" data-star="3">★</button>
+      <button type="button" data-star="4">★</button>
+      <button type="button" data-star="5">★</button>
+    </div>
+
+    <form class="rating-modal__form">
+      <input class="rating-modal__input" type="email" name="email" placeholder="Email" required />
+
+      <textarea class="rating-modal__textarea" name="review" placeholder="Your comment" rows="3"></textarea>
+
+      <button class="rating-modal__submit" type="submit">
+        Send
+      </button>
+    </form>
+  </div>
+</div>

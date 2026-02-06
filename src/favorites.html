@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/svg+xml" href="img/icons/news.svg" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorites</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <load src="./partials/header.html" icon-path="./img/sprite.svg#logo" highlight-act="active" />
+  <load src="./partials/mobile-menu.html" />
+
+  <main class="main favorites-main">
+    <div class="container favorites-page-container">
+
+      <h2 class="favorites-title">Favorites</h2>
+
+      <div class="favorites-layout">
+        <div class="favorites-sidebar">
+          <div class="favorites-sidebar-wrapper">
+            <load src="./partials/quote.html" />
+
+            <div class="favorites-sidebar-bottom">
+              <div class="daily-norm-card">
+                <div class="daily-norm-icon">
+                  <svg width="20" height="20">
+                    <use href="./img/icons/Vector.svg#icon-vector"></use>
+                  </svg>
+                </div>
+                <div class="daily-norm-text">
+                  <p class="daily-norm-val">110 min</p>
+                  <p class="daily-norm-label">Daily norm of sports</p>
+                </div>
+              </div>
+
+              <div class="favorites-sidebar-image">
+                <picture>
+                  <source srcset="./img/tab_x1_05.webp 1x, ./img/tab_x2_05.webp 2x" media="(min-width: 768px)">
+                  <img src="./img/mob_x1_03.webp" srcset="./img/mob_x2_03.webp 2x" alt="Active lifestyle" />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="favorites-content">
+          <ul class="favorites-list">
+          </ul>
+
+          <div class="favorites-empty-message" style="display: none;">
+            It appears that you haven't added any exercises to your favorites yet.
+            To get started, you can add exercises that you like to your favorites for easier access in the future.
+          </div>
+
+          <div id="pagination" class="pagination"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <load src="./partials/modal-exercise.html" />
+
+
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
