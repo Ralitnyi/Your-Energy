@@ -1,0 +1,32 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sidebar-title {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.21;
+    letter-spacing: -0.02em;
+    color: rgba(36, 36, 36, 0.5);
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .sidebar-title {
+        font-size: 44px;
+        line-height: 1.09;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+    .sidebar {
+        display: grid;
+        grid-template-columns: 400px 288px;
+        grid-template-rows: auto auto;
+        gap: 20px 16px;
+        justify-content: center;
+        align-items: start;
+    }
+}

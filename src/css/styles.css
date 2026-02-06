@@ -1,18 +1,19 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
 @import url('./reset.css');
-@import url('./base.css');
+@import url('./layout/base.css');
 @import url('./container.css');
 @import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+@import url('./layout/header.css');
+@import url('./layout/mobile-menu.css');
+@import url('./layout/hero.css');
+@import url('./layout/sidebar.css');
+@import url('./layout/footer.css');
+@import url('./layout/favorites.css');
+@import url('./layout/layout.css');
+
+@import url('./components/quote.css');
+@import url('./components/filters.css');
+@import url('./components/exercises.css');
+@import url('./components/pagination.css');
+@import url('./components/rating_modal.css');
+@import url('./components/modal.css');

@@ -1,0 +1,88 @@
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (min-width: 1440px) {
+  .main-layout {
+    flex-direction: row;
+    gap: 32px;
+    align-items: flex-start;
+  }
+}
+
+.sidebar {
+  width: 100%;
+  order: 2;
+}
+
+@media screen and (min-width: 1440px) {
+  .sidebar {
+    width: 444px;
+    flex-shrink: 0;
+    order: 1;
+  }
+}
+
+.main {
+  background-color: transparent;
+}
+
+.content {
+  width: 100%;
+  order: 1;
+}
+
+@media screen and (min-width: 1440px) {
+  .content {
+    flex: 1;
+    order: 2;
+  }
+}
+
+.exercises-page-container {
+  background-color: #F4F4F4;
+  padding: 0 20px 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .exercises-page-container {
+    padding: 0 32px 64px;
+  }
+}
+
+.filters {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.subscription {
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.is-hidden {
+  display: none !important;
+}

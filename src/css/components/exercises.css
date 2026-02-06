@@ -1,0 +1,123 @@
+.exercises-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .exercises-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
+    margin-bottom: 32px;
+  }
+}
+
+.exercise-card {
+  background-color: var(--white-color);
+  border-radius: 15px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.exercise-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exercise-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exercise-card__badge {
+  padding: 5px 8px;
+  background-color: rgba(36, 36, 36, 0.05);
+  border: 1px solid var(--border-grey-20);
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--primary-color);
+}
+
+.exercise-card__rating {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.exercise-card__star {
+  color: #EEA10C;
+}
+
+.exercise-card__start {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0;
+}
+
+.exercise-card__start:hover {
+  opacity: 0.7;
+}
+
+.exercise-card__title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.exercise-card__title::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: #242424;
+  border-radius: 50%;
+  background-image: url('../../img/icons/human.svg');
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.exercise-card__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-grey-40);
+}
+
+.exercise-card__info-label {
+  color: var(--text-grey-40);
+}
+
+.exercise-card__info-value {
+  color: var(--primary-color);
+}
